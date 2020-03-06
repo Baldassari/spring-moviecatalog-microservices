@@ -12,13 +12,13 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping("/ratingsdata")
+@RequestMapping("/ratings")
 public class RatingResources {
     @RequestMapping("/{movieId}")
     public Rating getMovieRating(@PathVariable("movieId") String movieId) {
         return new Rating(movieId, 3);
     }
-    @RequestMapping("/users/{usersId}")
+    @RequestMapping("/users/{userId}")
     public UserRatings getUserRating(@PathVariable("userId") String userId) {
         List<Rating> ratings = Arrays.asList(
                 new Rating("1234", 4),
